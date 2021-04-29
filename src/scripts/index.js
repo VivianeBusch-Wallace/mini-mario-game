@@ -5,12 +5,17 @@
 // https://keycode.info/
 let hStandPoint = 0;
 let vStandPoint = 0;
-let goalheight = document.querySelector(".final").style.top;
-let goalwidth = document.querySelector(".final").style.right;
-goalwidth = 10 + "vh";
-goalheight = 50 + "vh";
-console.log(goalheight);
-console.log(goalwidth);
+
+const final = document.querySelector(".final");
+final.style.top = "50vh";
+final.style.left = "80vh";
+let goalwidth = final.style.left;
+let subgw = goalwidth.substring(0, goalwidth.length - 2);
+let goalheight = final.style.top;
+let subgh = goalheight.substring(0, goalheight.length - 2);
+
+// console.log(goalheight);
+console.log(subgw);
 
 function goUp() {
   vStandPoint -= 1;
@@ -21,12 +26,12 @@ function goDown() {
   mini.style.top = vStandPoint + "vh";
 }
 function goRight() {
-  hStandPoint -= 1;
-  mini.style.right = hStandPoint + "vh";
+  hStandPoint += 1;
+  mini.style.left = hStandPoint + "vh";
 }
 function goLeft() {
-  hStandPoint += 1;
-  mini.style.right = hStandPoint + "vh";
+  hStandPoint -= 1;
+  mini.style.left = hStandPoint + "vh";
 }
 
 function move(e) {
@@ -37,14 +42,8 @@ function move(e) {
   if (e.code == "KeyS") goDown();
   console.log(hStandPoint + " <= hstandpoint");
   console.log(vStandPoint + " <= vstandpoint");
-  //   if (
-  //     window.innerHeight / 2 <= vStandPoint &&
-  //     window.innerWidth - 100 <= hStandPoint
-  //   )
-  //     alert("cool you are winner");
-  // }
-  if (vStandPoint <= goalheight && hStandPoint <= goalwidth)
-    alert("Good job! You win!");
+
+  if (vStandPoint == subgh && hStandPoint == subgw) alert("Good job! You win!");
 }
 const mini = document.querySelector(".mini");
 const body = document.querySelector("body");

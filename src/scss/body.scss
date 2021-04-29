@@ -17,6 +17,7 @@ body {
   background-image: url(../images/cat-cropped.jpg);
   background-size: contain;
   border-radius: 10%;
+  border: 2px blue solid;
 }
 .final {
   position: absolute;
@@ -24,8 +25,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-flow: wrap;
-  top: 50vh;
-  right: 10vh;
   width: 100px;
   height: 100px;
   //   background-image: url(../images/target-cropped.jpg);
