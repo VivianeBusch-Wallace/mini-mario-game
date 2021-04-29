@@ -11,8 +11,11 @@ body {
 
 .mini {
   position: absolute;
-  font-size: 2rem;
+  width: 100px;
+  height: 100px;
   z-index: 1;
+  background-image: url(../images/cat-cropped.jpg);
+  background-size: contain;
 }
 .final {
   position: absolute;
