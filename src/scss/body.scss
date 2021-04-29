@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../images/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.mini {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 1;
+}
+.final {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  top: 50vh;
+  right: 50vh;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
