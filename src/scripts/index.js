@@ -1,27 +1,32 @@
 // Notice to user about how to navigate
-alert("To navigate: w = up, s = down, d = right, a = left");
+// alert("To navigate: w = up, s = down, d = right, a = left");
 
 // What is Q key code? so here all the keys code you need to know
 // https://keycode.info/
 let hStandPoint = 0;
 let vStandPoint = 0;
-const goalheight = 50;
-const goalwidth = 50;
+let goalheight = document.querySelector(".final").style.top;
+let goalwidth = document.querySelector(".final").style.right;
+goalwidth = 10 + "vh";
+goalheight = 50 + "vh";
+console.log(goalheight);
+console.log(goalwidth);
+
 function goUp() {
-  vStandPoint -= 10;
-  mini.style.top = vStandPoint + "px";
+  vStandPoint -= 1;
+  mini.style.top = vStandPoint + "vh";
 }
 function goDown() {
-  vStandPoint += 10;
-  mini.style.top = vStandPoint + "px";
+  vStandPoint += 1;
+  mini.style.top = vStandPoint + "vh";
 }
 function goRight() {
-  hStandPoint += 10;
-  mini.style.left = hStandPoint + "px";
+  hStandPoint -= 1;
+  mini.style.right = hStandPoint + "vh";
 }
 function goLeft() {
-  hStandPoint -= 10;
-  mini.style.left = hStandPoint + "px";
+  hStandPoint += 1;
+  mini.style.right = hStandPoint + "vh";
 }
 
 function move(e) {
@@ -30,19 +35,16 @@ function move(e) {
   if (e.code == "KeyD") goRight();
   if (e.code == "KeyA") goLeft();
   if (e.code == "KeyS") goDown();
-  console.log(hStandPoint);
-  console.log(vStandPoint);
+  console.log(hStandPoint + " <= hstandpoint");
+  console.log(vStandPoint + " <= vstandpoint");
   //   if (
   //     window.innerHeight / 2 <= vStandPoint &&
   //     window.innerWidth - 100 <= hStandPoint
   //   )
   //     alert("cool you are winner");
   // }
-  if (
-    window.innerHeight / 2 <= vStandPoint &&
-    window.innerWidth - 100 <= hStandPoint
-  )
-    alert("cool you are winner");
+  if (vStandPoint <= goalheight && hStandPoint <= goalwidth)
+    alert("Good job! You win!");
 }
 const mini = document.querySelector(".mini");
 const body = document.querySelector("body");
