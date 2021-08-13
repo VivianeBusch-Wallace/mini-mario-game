@@ -8,7 +8,7 @@ let vStandPoint = 0;
 
 const final = document.querySelector(".final");
 final.style.top = "50vh";
-final.style.left = "80vh";
+final.style.left = "80vw";
 let goalwidth = final.style.left;
 let subgw = goalwidth.substring(0, goalwidth.length - 2);
 let goalheight = final.style.top;
@@ -19,19 +19,19 @@ console.log(subgw);
 
 function goUp() {
   vStandPoint -= 1;
-  mini.style.top = vStandPoint + "vh";
+  mini.style.top = vStandPoint + "vw";
 }
 function goDown() {
   vStandPoint += 1;
-  mini.style.top = vStandPoint + "vh";
+  mini.style.top = vStandPoint + "vw";
 }
 function goRight() {
   hStandPoint += 1;
-  mini.style.left = hStandPoint + "vh";
+  mini.style.left = hStandPoint + "vw";
 }
 function goLeft() {
   hStandPoint -= 1;
-  mini.style.left = hStandPoint + "vh";
+  mini.style.left = hStandPoint + "vw";
 }
 
 function move(e) {
